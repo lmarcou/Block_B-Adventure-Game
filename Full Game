@@ -1,1 +1,523 @@
+import random
+
+def win():
+    print("A wall of spikes approch you from behind and you run out of the room as quickly as possible")
+
+# Puts you up againist an opponent and has you play Tennis
+def tennis_game():
+    win = 0
+    lose = 0
+    difficulty = raw_input("What difficulty do you choose: easy, normal, hard ")
+    print("He serves the ball")
+    while True:
+        if win == 3:
+            print("You won")
+            break
+        if lose == 3:
+            print("You lost")
+            break
+        retrn = random.randint(1,4)
+        out = random.randint(1,2)
+        print(" ")
+        if retrn == 1:
+            print("The ball goes short you run up to return it")
+        elif retrn == 2:
+            print("The ball sails over head")
+        elif retrn == 3:
+            print("The ball goes to your left")
+        elif retrn == 4:
+            print("The ball goes to your right")
+        if difficulty == "normal":
+            los = lose
+            wi = win
+            swing = raw_input("Swing Left, Right, or Leave ")
+            if swing == "Leave":
+                if out == 1:
+                    print("The ball went out")
+                    win = wi + 1
+                    print("You have " + str(win) + " points")
+                    continue
+                else:
+                    lose = los + 1
+                    print("You missed he has " + str(lose) + " points")
+                    continue
+            left_or_right = random.randint(1, 2)
+            if left_or_right == 1:
+                print("You returned the ball")
+                returned = random.randint(1, 2)
+                if returned == 1:
+                    win = wi + 1
+                    print("You have " + str(win) + " points")
+                else:
+                    print("He returns the ball")
+            else:
+                lose = los + 1
+                print("You missed he has " + str(lose) + " points")
+        elif difficulty == "easy":
+            los = lose
+            wi = win
+            swing = raw_input("Swing Left, Right, or Leave ")
+            if swing == "Leave":
+                if out == 1:
+                    print("The ball went out")
+                    win = wi + 1
+                    print("You have " + str(win) + " points")
+                    continue
+                else:
+                    lose = los + 1
+                    print("You missed he has " + str(lose) + " points")
+                    continue
+            left_or_right = random.randint(1, 3)
+            if left_or_right == 1 or left_or_right == 2:
+                print("You returned the ball")
+                returned = random.randint(1, 3)
+                if returned == 1 or returned == 2:
+                    win = wi + 1
+                    print("You have " + str(win) + " points")
+                else:
+                    print("He returns the ball")
+            else:
+                lose = los + 1
+                print("You missed he has " + str(lose) + " points")
+        else:
+            los = lose
+            wi = win
+            swing = raw_input("Swing Left, Right, or Leave ")
+            if swing == "Leave":
+                if out == 1:
+                    print("The ball went out")
+                    win = wi + 1
+                    print("You have " + str(win) + " points")
+                    continue
+                else:
+                    lose = los + 1
+                    print("You missed he has " + str(lose) + " points")
+                    continue
+            left_or_right = random.randint(1, 3)
+            if left_or_right == 1:
+                print("You returned the ball")
+                returned = random.randint(1, 3)
+                if returned == 1:
+                    win = wi + 1
+                    print("You have " + str(win) + " points")
+                else:
+                    print("He returns the ball")
+            else:
+                lose = los + 1
+                print("You missed he has " + str(lose) + " points")
+            if win == 3:
+                print("You won")
+                win()
+                break
+            if lose == 3:
+                print("You lost")
+                start()
+                break
+# Starts the Tennis game
+def tennis():
+    print(" ")
+    print("The field flips and turns to reveil a tennis court")
+    print("A robotic figure appears in front of you")
+    print("It has no arms or legs just floating there with a ball holding onto the racket")
+    print("Your opponent waits for you to get ready")
+    while True:
+        racket = raw_input("Grab your racket: ")
+        if racket == "yes":
+            print(" ")
+            break
+    tennis_game()
+
+# The standard message you get when you win
+def win_wrestling():
+    print "The Ref: 1...2...3...4...5 *smacks the mat*"
+    print "Narrator: You get up, walk to the center, take off the anklet, the ref raises your hand in victory, then you walk off the mat"
+    print "Coach Ham: Good match, you wrestled well and tough."
+    print "Narrator: Now that you've won you put your warm ups on and watch the rest of the matches."
+    print "Everything is done now and you leave the gym with a 1-0 record"
+    print "Congratulations you have won this room you leave now."
+    win()
+    
+# The standard message you get when you loose
+def loose_wrestling():
+    print "The Ref: 1...2...3...4...5 *smacks the mat*"
+    print "Narrator: You get up, walk to the center, take off the anklet, the ref raises the wrestler's in victory, then you walk off the mat."
+    print "Coach Ham: That was a bad match, you gave up at the end there, you need to be tougher on bottom, try to stand up."
+    print "You lost, run code to try again."
+    start()
+
+# All of the code for the wrestling match 
+def wrestling():
+    print "You've picked the wrestling option, your coach will be helping you through this. His name is Coach Ham"
+    print "Quick rule, only responf with yes, no or a given response."
+    print "There will also be a narrator expalining what is happening"
+    first = raw_input("Coach Ham: This is the firt meet of the season are you ready: ")
+    if first == "yes":
+        print "Coach Ham: Alright, you better win"
+        print "Narrator: You walk out to the center of the matt and pick up the green anklet. Then you walk back to Ham."
+        print "Coach Ham: Listen, you need to shoot and be aggressive in order to win. If you aren't you will lose."
+        print "Narrator: With the pep talk from your coach you go back to the center, shake the other wrestler's hand. The ref blows the whistle and it's on"
+        shot = raw_input("Narrator: In order to win you must be aggresive and shoot? Will you? ")
+        if shot == "yes":
+            chance1 = random.randint(1,2)
+            if chance1 == 1:
+                print "Narrator: Your shot was successful you took him down and you scored 2 points."
+                print "Coach Ham: You need to ride him now, get the two-on-one."
+                print "Narrator: You got the two-on-one and you broke him down. Now you're going for the cross face cradle."
+                choice = raw_input("Would you like to cross face and go for the pin? ")
+                if choice == "yes":
+                    cross_face = random.randint(1,2)
+                    if cross_face == 1:
+                        while True:
+                            print "Narrator: He eats your cross face and you don't get it in."
+                            print "Coach Ham: Try again!"
+                            cross_face = random.randint(1,2)
+                            if cross_face == 2:
+                                print "Narrator: You ran in the the cradle and now your pinning him."
+                                win_wrestling()
+                    elif cross_face == 2:
+                        print "Narrator: You ran in the the cradle and now your pinning him."
+                        win_wrestling()
+                if choice == "no":
+                    print "Narrator: You didn't take the oppurtunity and you get reversed."
+                    print "Narrator: You got lazy and got yout self pinned."
+                    loose_wrestling()
+            elif chance1 == 2:
+                while True:
+                    print "Narrator: Your shot failed, but you recover."
+                    print "Coach Ham: Try again!"
+                    chance1 = random.randint(1,2)
+                    if chance1 == 2:
+                        print "Narrator: Your shot was successful you took him down and you scored 2 points."
+                        print "Coach Ham: You need to ride him now, get the two-on-one."
+                        print "Narrator: You got the two-on-one and you broke him down. Now you're going for the cross face cradle."
+                    choice = raw_input("Would you like to cross face and go for the pin? ")
+                    if choice == "yes":
+                        cross_face = random.randint(1,2)
+                        if cross_face == 1:
+                            while True:
+                                print "Narrator: He eats your cross face and you don't get it in."
+                                print "Coach Ham: Try again!"
+                                cross_face = random.randint(1,2)
+                                if cross_face == 2:
+                                    print "Narrator: You ran in the the cradle and now your pinning him."
+                                    win_wrestling()
+                        elif cross_face == 2:
+                            print "Narrator: You ran in the the cradle and now your pinning him."
+                            win_wrestling()
+                if choice == "no":
+                    print "Narrator: You didn't take the oppurtunity and you get reversed."
+                    loose_wrestling()
+        if shot == "no":
+            sprawl_and_spin = random.randint(1, 10)
+            if sprawl_and_spin == 1:
+                print "Narrator: The other wrestler shoots but you sprawl and spin around. You get 2 for the take down."
+                half = raw_input("There's an opputunity for a half, will you take it?")
+                if half == "yes":
+                    print "You run the half, punch it in and get the pin."
+                    win_wrestling()
+                if half == "no":
+                    print "Narrator: You didn't take the oppurtunity and you get reversed."
+                    print "Narrator: You got lazy and got yout self pinned."
+                    loose_wrestling()
+            else:
+                print "Narrator: You didn't shoot, because of that you got taken down."
+                standup = raw_input("Do you want to stand up or get pinned? ")
+                if standup == "stand up":
+                    print "Narrator: You tried to stand up but you failed, you're now getting pinned." 
+                    loose_wrestling()
+                if standup == "get pinned":
+                    print "Narrator: You got lazy and got yout self pinned."
+                    loose_wrestling()
+    if first == "no":
+        print "Coach Ham: Well too bad, you're going anyways."
+        print "Narrator: You walk out to the center of the matt and pick up the green anklet. Then you walk back to Ham."
+        print "Coach Ham: Listen, you need to shoot and be aggressive in order to win. If you aren't you will lose."
+        print "Narrator: With the pep talk from your coach you go back to the center, shake the other wrestler's hand. The ref blows the whistle and it's on"
+        shot = raw_input("Narrator: In order to win you must be aggresive and shoot? Will you? ")
+        if shot == "yes":
+            chance1 = random.randint(1,2)
+            if chance1 == 1:
+                print "Narrator: Your shot was successful you took him down and you scored 2 points."
+                print "Coach Ham: You need to ride him now, get the two-on-one."
+                print "Narrator: You got the two-on-one and you broke him down. Now you're going for the cross face cradle."
+                choice = input("Would you like to cross face and go for the pin? ")
+                if choice == "yes":
+                    cross_face = random.randint(1,2)
+                    if cross_face == 1:
+                        while True:
+                            print "Narrator: He eats your cross face and you don't get it in."
+                            print "Coach Ham: Try again!"
+                            cross_face = random.randint(1,2)
+                            if cross_face == 2:
+                                print "Narrator: You ran in the the cradle and now your pinning him."
+                                win_wrestling()
+                                break
+                    elif cross_face == 2:
+                        print "Narrator: You ran in the the cradle and now your pinning him."
+                        win_wrestling()
+                        break
+                if choice =="no":
+                    print "Narrator: You didn't take the oppurtunity and you get reversed."
+                    print "Narrator: You got lazy and got yout self pinned."
+                    loose_wrestling()
+            elif chance1 == 2:
+                while True:
+                    print "Narrator: Your shot failed, but you recover."
+                    print "Coach Ham: Try again!"
+                    chance1 = random.randint(1,2)
+                    if chance1 == 2:
+                        print "Narrator: Your shot was successful you took him down and you scored 2 points."
+                        print "Coach Ham: You need to ride him now, get the two-on-one."
+                        print "Narrator: You got the two-on-one and you broke him down. Now you're going for the cross face cradle."
+                        break
+                    choice = raw_input("Would you like to cross face and go for the pin? ")
+                if choice == "yes":
+                    cross_face = random.randint(1,2)
+                    if cross_face == 1:
+                        while True:
+                            print "Narrator: He eats your cross face and you don't get it in."
+                            print "Coach Ham: Try again!"
+                            cross_face = random.randint(1,2)
+                            if cross_face == 2:
+                                print "Narrator: You ran in the the cradle and now your pinning him."
+                                win_wrestling()
+                                break
+                    elif cross_face == 2:
+                        print "Narrator: You ran in the the cradle and now your pinning him."
+                        win_wrestling()
+                        break
+                if choice =="no":
+                    print "Narrator: You didn't take the oppurtunity and you get reversed."
+                    print "Narrator: You got lazy and got yout self pinned."
+                    loose_wrestling()
+        if shot == "no":
+            sprawl_and_spin = random.randint(1, 10)
+            if sprawl_and_spin == 1:
+                print "Narrator: The other wrestler shoots but you sprawl and spin around. You get 2 for the take down."
+                half = raw_input("There's an opputunity for a half, will you take it?")
+                if half == "yes":
+                    print "You run the half, punch it in and get the pin."
+                    win_wrestling()
+                    break
+                if half == "no":
+                    print "Narrator: You didn't take the oppurtunity and you get reversed."
+                    print "Narrator: You got lazy and got yout self pinned."
+                    loose_wrestling()
+            else:
+                print "Narrator: You didn't shoot, because of that you got taken down."
+                standup = input("Do you want to stand up or get pinned? ")
+                if standup == "stand up":
+                    print "Narrator: You tried to stand up but you failed, you're now getting pinned." 
+                    loose_wrestling()
+                if standup == "get pinned":
+                    print "Narrator: You got lazy and got yout self pinned."
+                    loose_wrestling()
+    
+
+def defence():
+    print ("You now have to go and play defence!")
+    defence = raw_input("The other team is about to pass the ball up the court do you go for the steal?: ")
+    if defence == "yes":
+        steal = random.randint(1,2)
+        if steal == 1:
+            print("you stole the ball and now have a fast brake.")
+            dribble
+        else:
+            print("You missed the steal and they score, you lost")
+
+def dribble():
+    while True:
+        dribble = raw_input("do you chose to dribble to the left or right?: ")
+        if dribble == "left":
+            print ("You have chosen to dribble to the left")
+            shoot = raw_input("do you chose to shoot?: ")
+            if shoot == "yes":
+                shot = random.randint(1,2)
+                if shot == 1:
+                    print("You scored and tied the game")
+                    break
+                else:
+                    print("You missed")
+                defence()
+            if shoot == "no":
+                pas = raw_input("do you chose to pass?: ")
+                if pas == "yes":
+                    print ("You passed the ball to a teammate.")
+                if pas =="no":
+                    print ("you keep dribbling to the hoop")
+                    layup = raw_input("do you take the lay up wirh your right or left hand?: ")
+                    if layup == "left":
+                        print("you maked the layup you have tied the game!")
+                        defence()
+                    if layup == "right":
+                        shot = random.randint(1,2)
+                        if shot == 1:
+                            print("You scored and tied the game")
+                            break
+                        else:
+                            print("You missed")
+                            defence()
+        if dribble == "right":
+            print ("You have chosen to dribble to the right")
+            shoot = raw_input("do you chose to shoot?: ")
+            if shoot == "yes":
+                shot = random.randint(1,2)
+                if shot == 1:
+                    print("You scored and tied the game")
+                    break
+                else:
+                    print("You missed")
+                defence()
+            if shoot == "no":
+                pas = raw_input("do you chose to pass?: ")
+                if pas == "yes":
+                    print ("You passed the ball to the other team.")
+                    defence()
+                if pas == "no":
+                    print ("You turn the ball over.")
+                    defence()
+
+def basketball():
+    print ("You have Chosen the basketball option.") 
+    print ("You will be placed in a basketball game and have to try to win.")
+    print ("The other team is up by 2 and there is 20 seconds left in the game and it's your ball")  
+    dribble
+    
+def soccer():
+    m_score = 0
+    o_score = 0
+    
+    print("Welcome to Soccer on *MARS*!")
+
+    print ("You will be asked a set of questions And  ")
+    print ("You will be rated on your performance after each match out of a 10...The hype is REAL!!!")
+    print ("Press 'S' for ShowBoating, 'W' to Tackle , 'A' to shoot and 'D'  to Dive XD and 'P' to Pass")
+    print ("GoodLuck I'll meet you at the other end. #HalaMadridYNadaMas")
+
+    first = input("You walk into the field and Suddenly the spotlight is on You..Are you ready : ")
+
+    if first == "yes" or first ==  "y" or first ==  "Y" :
+    
+        print("GoodJOB!")
+        print ("commentator : Hold on to your Hats it is the debut of the newly signed 17 year old..")
+        print ("commentator : It's nearly the end of the first half and nothing to show on the scoreboard!")
+        print ("commentator : And Tempe FC have a corner now, just before the halfends..Let's see what they can do..")
+    
+        second = input("The Gaffer and the fans are counting on you .. Choose wisely, You want to make the pass or attempt at goal : ")
+        
+        choice = random.randint(1,2)
+        if second == "S":
+            print ("You go in and take the pass, the defender tackles you and your team now has a Penalty! Right before the whistle goes off..")
+            print("Your Teammate No.10 Steps up to the spot....")
+            print("He gives you the ball and say's 'Go for the down right..'")
+            
+            print ("The team is counting on you.. Don't let them down")
+            penalty1 = input("Where do you choose to shoot? DownRight = 1 , TopLeft = 2    :   ")
+            
+            if choice == 1:
+                m_score = m_score + 1
+                o_score = 0
+                print("Gooooooooooooal")
+                print("commentator: ") + str(m_score) + (" - ") + str(o_score) 
+              
+            elif choice == 2 :
+                print("commentator : The Keeper makes an outstanding save!!")
+                print ("Better luck next time !")
+            
+        elif second == "P":
+            print("You take the corner and the ball goes over your teammates, you waste the corner kick and the whistle blows..")
+            print("It's HalfTime..Be sure to refresh yourslef.")
+            
+    print("You go back to the tunnel and the gaffer rearranges the team.")
+    print("The opposition pushes up and their striker takes a shot from long range...")  
+    print("The keeper makes a good save,catching the ball..He clears the ball")
+    
+    min49 = input ("Your teammate passes you the ball, there are two players of oppostion in front of you.. Do you choose to dribble or pass : ")
+        
+    if min49 == "dribble" or min49 == "d" or min49 == "D":
+        print ("You dribble the ball past one defender and then you try to Nutmeg the other defender.. You fail miserably.. The defender clears the ball. ")
+            
+    elif min49 == "pass" or min49 == "p"  or min49 == "P" :
+        print ("You pass the ball and start the counter attack.. ")
+        print ("And you run towards the left flank")
+        print("You get the ball and choose to pass it  ")
+            
+        choose_to_ = input("What do you choose to do ? Pass the ball to the near midfielder or Cross the ball to the center? : " )
+        if choose_to_ == ("Pass"):
+            print("The defenders comes in the way and clears the ball")
+                
+        elif choose_to_ == (" Cross"):
+            print("The ball gets headed away from the goal")
+                
+        else:
+            print("This ain't a valid option")
+        
+        print("You are on the breakaway and you got only the keeper to beat")    
+    min63 = input(" Choose wisely, where do you choose to shoot? TopLeft = 1 , TopRight = 3 or BottomLeft = 2 ")
+    
+    choice_2 = random.randint(1,3)
+        
+    if min63 == choice_2:
+        m_score = m_score + 1
+        o_score = 0
+            
+        print(" commentator : Goooooooooooooooooooooooooooooooooooaaaaaaaaaaaaaaaaaal")
+        print("The shot goes driven in into the desired spot and it's ") + str(m_score)  + (" - ")+ str(o_score)
+    else:
+        print("commentator : The Keeper makes a great save! Just reaching it and turning it towards the post")
+        print ("And it's still ")  + str(m_score)  + (" - ")+ str(o_score)
+
+    print ("Commentator : It is min 72 and the opposition are on a counter attack")
+    print("No. 11 sprints to the penalty box to recive the pass...")    
+    print ("And OHHHHHHHH! No.3 just takled No.11 and missed it by a fraction of seconds")
+    print ("It's a Penalty to the opposition now")
+    print("He sets up the spot and")
+    print ("He shoots at the bottom right and GOooooooooooooooooooooooooooal!")            
+    o_score = o_score + 1
+    print ("Game On")  + str(m_score)  + (" - ")+ str(o_score)
+        
+    min84 = input("You have a freekick and it is 30 yards away from goal, Where do you choose to shoot ?  DownRight = 1 , TopLeft = 2 : ")
+
+    if min84 == "1":
+        frkckH = random.randint(1,2)
+        
+        if frkckH == 1:
+            m_score = m_score + 1
+            print("Goaaaaaaaaaaaaaalaaaaaaaaaaaazooooooooo del Tempeeee FCCCCCCCCC!!!")
+            print("And it's ")  + str(m_score)  + (" - ")+ str(o_score)
+        else:
+            print("oH!! it's a miss")
+            print ("it's still ") + str(m_score)  + (" - ")+ str(o_score)
+                
+    elif min84 == "2":
+        frkckH = random.randint(1,2)
+        if frkickH == 1:
+            print("Goaaaaaaaaaaaaaalaaaaaaaaaaaazooooooooo del Tempeeee FCCCCCCCCC!!!")
+            print("And it's ")  + str(m_score)  + (" - ")+ str(o_score)
+             
+        else: 
+            print("oH!! it's a miss")
+            print("And it's ")  + str(m_score)  + (" - ")+ str(o_score)
+            
+        print("It is 90 minutes up and the ref blows the whistle!")
+        print ("Final Score : ") + str(m_score)  + (" - ") + str(o_score)
+ 
+    else:
+        print("This not a valid option!! You're trapped now... Bahahahaha")
+
+
+# The start of the room with the options, also gets used when you lose a game
+def start_gym():
+    layout = raw_input("There's a panal in front of you, the options are T for tennis, S for soccer, B for basketball and W for Wrestling, enter a letter: ")
+    if layout == "T":
+      tennis()
+    elif layout == "W":
+      wrestling()
+    elif layout == "B":
+        basketball()
+    elif layout == "S":
+        soccer()
+    else:
+      print("That is not an option")
+start_gym()
 
